@@ -45,18 +45,18 @@ install() {
 #		systemctl enable permnt-data.automount --now
 		systemctl enable permnt-ssdata.mount --now
 
-	echo -e "\e[34;1m font x3 \e[0m"
-
-		if [ "$(sha256sum "${dir}"/cartograph-cf-v2.rar | awk '{ print $1 }')" == "df3a34139ae3ea761910046b0e2ead87820c57b75f9edb6476eeb3fbb4926841" ]; then
-			echo -e "\e[34;1m file alredy exist \o/ \e[0m"
-		else
-			echo -e "\e[34;1m dowonloading the font ! \e[0m"
-			curl https://ifonts.xyz/wp-content/uploads/2020/04/cartograph-cf-v2.rar -O "${dir}"/
-			wait
-		fi
-	echo -e "\e[34;1m extracting CartographCF \e[0m"
-		mkdir -p /usr/local/share/fonts/c &> /dev/null
-		bsdtar -C /usr/local/share/fonts/c/ -xf "${dir}"/cartograph-cf-v2.rar "*.otf"
+#	echo -e "\e[34;1m font x3 \e[0m"
+#
+#		if [ "$(sha256sum "${dir}"/cartograph-cf-v2.rar | awk '{ print $1 }')" == "df3a34139ae3ea761910046b0e2ead87820c57b75f9edb6476eeb3fbb4926841" ]; then
+#			echo -e "\e[34;1m file alredy exist \o/ \e[0m"
+#		else
+#			echo -e "\e[34;1m dowonloading the font ! \e[0m"
+#			curl https://ifonts.xyz/wp-content/uploads/2020/04/cartograph-cf-v2.rar -O "${dir}"/
+#			wait
+#		fi
+#	echo -e "\e[34;1m extracting CartographCF \e[0m"
+#		mkdir -p /usr/local/share/fonts/c &> /dev/null
+#		bsdtar -C /usr/local/share/fonts/c/ -xf "${dir}"/cartograph-cf-v2.rar "*.otf"
 }
 
 uninstall() {
@@ -72,8 +72,8 @@ uninstall() {
 	echo -e "\e[34;1m Remeowing systemd automount files\e[0m"
 		rm /etc/systemd/system/permnt-*
 
-	echo -e "\e[34;1m Remeowing CartographCF\e[0m"
-		rm /usr/local/share/fonts/c/CartographCF*
+#	echo -e "\e[34;1m Remeowing CartographCF\e[0m"
+#		rm /usr/local/share/fonts/c/CartographCF*
 
 	systemctl daemon-reload
 }
