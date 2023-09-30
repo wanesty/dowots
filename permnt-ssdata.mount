@@ -1,0 +1,12 @@
+[Unit]
+Description=Mount ssdata btrfs drive (/permnt/ssdata)
+
+[Mount]
+What=/dev/disk/by-uuid/e0bd05e7-337a-4f91-977d-06a4c69e3dd8
+Where=/permnt/ssdata/
+Type=btrfs
+Options=rw,relatime,ssd,space_cache=v2
+TimeoutSec=10s
+
+[Install]
+WantedBy=multi-user.target

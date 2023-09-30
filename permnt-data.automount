@@ -1,0 +1,12 @@
+[Unit]
+Description= autoMount data drive (/permnt/data)
+
+[Automount]
+#What=/dev/disk/by-uuid/01D56A4FD5EFA270
+Where=/permnt/data/
+#Type=ntfs
+#Options=defaults,rw,noatime
+TimeoutSec=10
+
+[Install]
+WantedBy=multi-user.target
